@@ -1,0 +1,137 @@
+:root {
+   font-size: 62.5%;
+
+   --ff--primary: "DM Sans", sans-serif;
+   --ff--secondary: "Rubik", sans-serif;
+}
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   text-decoration: none;
+   list-style: none;
+}
+
+img {
+   display: block;
+   width: 100%;
+   height: 100%;
+}
+
+body {
+   font-size: 16px;
+   background: #111827;
+   line-height: 1.3;
+   overflow-x: hidden;
+}
+
+.header {
+   max-width: 1200px;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   position: absolute;
+   top: 0;
+   left: 50%;
+   transform: translateX(-50%);
+   padding: 4rem 1rem;
+   z-index: 5;
+}
+
+.header.active {
+   position: fixed;
+   background-color: #161d32;
+   animation: slidIn 500ms ease forwards;
+}
+
+@keyframes slidIn {
+   0% {
+      transform: translateY(-100%) translateX(-50%);
+   }
+   100% {
+      transform: translateY(0) translateX(-50%);
+   }
+}
+
+.logo {
+   display: flex;
+   align-items: center;
+   gap: 0.8rem;
+   font-size: var(--ff--secondary);
+   font-weight: 500;
+   font-size: 2rem;
+   color: #ffffff;
+   line-height: 24px;
+}
+
+.logo img {
+   width: 25px;
+}
+
+#open--menu--btn {
+   font-size: 3rem;
+   font-weight: bold;
+   color: #ffffff;
+   cursor: pointer;
+   display: none;
+}
+
+.nav--link {
+   margin-inline: 0 6rem;
+   font-family: var(--ff--primary);
+   font-weight: 500;
+   font-size: 1.4rem;
+   color: #f9fafb;
+   transition: all 300ms;
+}
+
+.nav--link:is(:hover, :focus) {
+   color: #6f737c;
+}
+
+.nav--btn {
+   background: linear-gradient(90.35deg, #2563eb 0.36%, #d946ef 201.02%);
+   padding: 12px 24px;
+   color: #ffffff;
+   border-radius: 5px;
+   font-family: var(--ff--primary);
+   font-weight: 500;
+   font-size: 1.4rem;
+   line-height: 18px;
+   transition: all 300ms;
+}
+
+.nav--btn:is(:hover, :focus) {
+   background: linear-gradient(160.35deg, #4473d8 0.86%, #d066e0 101.02%);
+}
+
+@media (max-width: 780px) {
+   .navbar {
+      position: absolute;
+      top: 100%;
+      right: -350px;
+      max-width: 350px;
+      background-color: #161d32;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-block-start: 1rem;
+      transition: all 300ms;
+   }
+
+   .navbar.active {
+      right: 0;
+   }
+
+   .nav--link {
+      margin-inline: 0;
+      margin-bottom: 6rem;
+   }
+
+   #open--menu--btn {
+      display: block;
+   }
+}

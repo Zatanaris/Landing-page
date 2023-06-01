@@ -40,7 +40,6 @@ body {
 
 .header.active {
    position: fixed;
-   left: 0;
    background-color: #161d32;
    animation: slidIn 500ms ease forwards;
 }

@@ -40,17 +40,19 @@ body {
 }
 
 .header.active {
+   max-width: 100%;
    position: fixed;
+   left: 0;
    background-color: #161d32;
    animation: slidIn 500ms ease forwards;
 }
 
 @keyframes slidIn {
    0% {
-      transform: translateY(-100%) translateX(-50%);
+      transform: translateY(-100%);
    }
    100% {
-      transform: translateY(0) translateX(-50%);
+      transform: translateY(0);
    }
 }
 
@@ -106,6 +108,88 @@ body {
    background: linear-gradient(160.35deg, #4473d8 0.86%, #d066e0 101.02%);
 }
 
+.container {
+   display: grid;
+   grid-template-columns: 1fr min(100%, calc(1200px - 10px)) 1fr;
+   padding-inline: 1rem;
+}
+
+.container > * {
+   grid-column: 2;
+}
+
+.home {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   align-items: center;
+   padding-block-start: 9rem;
+}
+
+.title {
+   background: linear-gradient(89.83deg, #2563eb 0.11%, #d946ef 58.65%);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   background-clip: text;
+   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.07);
+   font-family: var(--ff--primary);
+   font-weight: 700;
+   font-size: clamp(3rem, 4vw, 5.8rem);
+   line-height: 1.2;
+   letter-spacing: 0.02em;
+}
+
+.text--home {
+   font-family: var(--ff--primary);
+   font-weight: 500;
+   font-size: 15px;
+   line-height: 30px;
+   color: #e5e7eb;
+   opacity: 0.8;
+   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.07);
+   margin-block: 30px;
+}
+
+.group--btn {
+   display: flex;
+   gap: 1.6rem;
+}
+
+.Join--btn {
+   background: linear-gradient(90.35deg, #2563eb 0.36%, #d946ef 201.02%);
+   border-radius: 6px;
+   color: #ffffff;
+   width: 135px;
+   height: 50px;
+   font-family: var(--ff--primary);
+   font-weight: 500;
+   font-size: 16px;
+   line-height: 21px;
+   cursor: pointer;
+   border: none;
+}
+
+.Join--btn:is(:hover, :focus) {
+   opacity: 0.8;
+}
+
+.Watch--btn {
+   display: flex;
+   align-items: center;
+   gap: 0.8rem;
+   background-color: transparent;
+   border: 0;
+   cursor: pointer;
+   font-family: var(--ff--primary);
+   font-weight: 500;
+   font-size: 16px;
+   line-height: 21px;
+   color: #f9fafb;
+}
+
+.Watch--btn i {
+   font-size: 30px;
+}
+
 @media (max-width: 780px) {
    .navbar {
       position: absolute;
@@ -133,5 +217,13 @@ body {
 
    #open--menu--btn {
       display: block;
+   }
+
+   .home {
+      grid-template-columns: 1fr;
+   }
+
+   .Join--btn {
+      width: 115px;
    }
 }

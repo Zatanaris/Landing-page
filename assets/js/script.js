@@ -2,6 +2,15 @@ const OpenBtn = document.querySelector("#open--menu--btn");
 const CloseBtn = document.querySelector("#close--btn");
 const navbar = document.querySelector(".navbar");
 const header = document.querySelector("header");
+const Navlinks = document.querySelectorAll(".nav--link");
+
+Navlinks.forEach((link) => {
+   link.addEventListener("click", () => {
+      if (navbar.classList.contains("active")) {
+         navbar.classList.remove("active");
+      }
+   });
+});
 
 const ArrElements = [CloseBtn, OpenBtn];
 
